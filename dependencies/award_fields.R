@@ -157,7 +157,7 @@ TYPE_OF_CONTRACT_PRICING = tryCatch(list_element[['contractData']][['typeOfContr
 TYPE_OF_SET_ASIDE = tryCatch(list_element[['competition']][['typeOfSetAside']][[1]], error = function(e) return(NA)),
 TYPE_OF_SET_ASIDE_SOURCE = tryCatch(list_element[['competition']][['typeOfSetAsideSource']][[1]], error = function(e) return(NA)),
 IDV_TYPE_OF_SET_ASIDE = tryCatch(list_element[['competition']][['idvTypeOfSetAside']][[1]], error = function(e) return(NA)),
-BASE_AND ALL_OPTIONS = tryCatch(list_element[['dollarValues']][['baseAndExercisedOptionsValue']][[1]], error = function(e) return(NA)),
+BASE_AND_ALL_OPTIONS = tryCatch(list_element[['dollarValues']][['baseAndExercisedOptionsValue']][[1]], error = function(e) return(NA)),
 US_GOVERNMENT_ENTITY = tryCatch(list_element[['vendor']][['vendorSiteDetails']][['vendorBusinessTypes']][['businessOrOrganizationType']][['isUSGovernmentEntity']][[1]], error = function(e) return(NA)),
 USE_OF_EPA_PRODUCTS = tryCatch(list_element[['productOrServiceInformation']][['useOfEPADesignatedProducts']][[1]], error = function(e) return(NA)),
 VENDOR_ADDRESS_CITY = tryCatch(list_element[['vendor']][['vendorSiteDetails']][['vendorLocation']][['city']][[1]], error = function(e) return(NA)),
@@ -227,3 +227,5 @@ VENDOR_ADDRESS_COUNTRY_NAME = tryCatch(attributes(list_element[['vendor']][['ven
 WALSH_HEALEY_ACT_DESC = tryCatch(attributes(list_element[['legislativeMandates']][['materialsSuppliesArticlesEquipment']])$description, error = function(e) return(NA))
 )
 }
+
+ 

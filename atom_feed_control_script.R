@@ -48,14 +48,16 @@ address <- paste0("https://www.fpds.gov/ezsearch/FEEDS/ATOM?FEEDNAME=PUBLIC&q=SI
 # Step 3: Source the Awards -----------------------------------------------
 source("dependencies/award_pull.R")
 
-# missed_award_links ## Check for any that were missed 
-# source("dependencies/missed_award_pull.R") ## if there is missingness, run this script
+if (length(missed_award_links) > 0) {           ## Check for any that were missed 
+  source("dependencies/missed_award_pull.R")    ## if there is missingness, run this script
+}
 
 # Step 4: Source the IDVs -------------------------------------------------
 source("dependencies/idv_pull.R")
 
-# missed_idv_links ## Check for any that were missed if you need to If they were missed run the missing script
-# source("dependencies/missed_idv_pull.R") ## if there is missingness, run this script
+if (length(missed_idv_links) > 0) {           ## Check for any that were missed 
+  source("dependencies/missed_idv_pull.R")    ## if there is missingness, run this script
+}
 
 # Step 5: make the master data set ----------------------------------------------
 atom_pull_df <- rbindlist(list(
@@ -114,7 +116,7 @@ write_fst(deleted_pull_df, paste0("extracts/deleted_pull_fy22_23_",str_replace_a
 # atom_pull_df <- read_fst( paste0("extracts/atom_pull_fy22_",str_replace_all(mod_start, "\\/", ""), "to",str_replace_all(mod_end, "\\/", ""),".fst"), as.data.table = TRUE)
 # deleted_pull_df <- read_fst(paste0("extracts/deleted_pull_fy22_",str_replace_all(mod_start, "\\/", ""), "to",str_replace_all(mod_end, "\\/", ""),".fst"), as.data.table = TRUE)
 
-# Step 11: ETL into the server --------------------------------------------
+# Step 11: Load into the server --------------------------------------------
 source("dependencies/weekly_etl.R")
 
 
