@@ -108,7 +108,7 @@ dbGetQuery(ATOMCON,
 
 dbGetQuery(ATOMCON,
            "DROP VIEW ATOMFY2022_SBGR")
-
+s
 dbGetQuery(ATOMCON,
            "DROP VIEW ATOMFY2023_ALLDATA")
 
